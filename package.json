@@ -1,42 +1,44 @@
 {
-  "name": "@weavedev/lit-i18next",
+  "name": "@inventage/lit-i18next",
   "version": "2.0.0-rc.1",
   "description": "i18next implementation for Lit",
-  "scripts": {
-    "prepare": "tsc"
-  },
+  "license": "MIT",
   "author": "Weave B.V. (https://weave.nl)",
   "contributors": [
     "Quincy van Bommel <dev@aquiblo.com>"
   ],
+  "homepage": "https://github.com/inventage/lit-i18next#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inventage/lit-i18next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inventage/lit-i18next/issues"
+  },
   "main": "dist/lit-i18next.js",
-  "types": "dist/lit-i18next.d.ts",
   "files": [
     "/dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/weavedev/lit-i18next.git"
+  "scripts": {
+    "commit": "cz",
+    "prepare": "tsc"
   },
-  "keywords": [
-    "internationalization",
-    "i18n",
-    "i18next",
-    "localization",
-    "lit",
-    "lit-element"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/weavedev/lit-i18next/issues"
-  },
-  "homepage": "https://github.com/weavedev/lit-i18next#readme",
+  "types": "dist/lit-i18next.d.ts",
   "peerDependencies": {
     "@lit/reactive-element": "^1.0.0 || ^2.0.0",
     "i18next": ">=19.5.0 < 23.0.0"
   },
   "devDependencies": {
     "@lit/reactive-element": "^2.0.0",
+    "commitizen": "~4.3.1",
     "typescript": "~5.3.3"
-  }
+  },
+  "keywords": [
+    "i18n",
+    "i18next",
+    "internationalization",
+    "lit",
+    "lit-element",
+    "localization"
+  ]
 }

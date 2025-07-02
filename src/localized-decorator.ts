@@ -36,7 +36,7 @@ interface ClassElement {
  * ```ts
  * import { LitElement, html } from 'lit';
  * import { customElement } from 'lit/decorators.js';
- * import { localized, t } from '@weavedev/lit-i18next';
+ * import { localized, t } from '@inventage/lit-i18next';
  *
  * @localized()
  * @customElement('my-element')

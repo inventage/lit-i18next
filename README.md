@@ -1,20 +1,20 @@
-[![npm version](https://img.shields.io/npm/v/@weavedev%2Flit-i18next.svg)](https://www.npmjs.com/package/@weavedev/lit-i18next)
-[![Downloads](http://img.shields.io/npm/dm/@weavedev%2Flit-i18next.svg)](https://www.npmjs.com/package/@weavedev/lit-i18next)
+[![npm version](https://img.shields.io/npm/v/@inventage%2Flit-i18next.svg)](https://www.npmjs.com/package/@inventage/lit-i18next)
+[![Downloads](http://img.shields.io/npm/dm/@inventage%2Flit-i18next.svg)](https://www.npmjs.com/package/@inventage/lit-i18next)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![License](https://img.shields.io/github/license/weavedev/lit-i18next.svg)](https://github.com/weavedev/lit-i18next/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/inventage/lit-i18next.svg)](https://github.com/inventage/lit-i18next/blob/master/LICENSE)
 
-# @weavedev/lit-i18next
+# @inventage/lit-i18next
 
 ## Usage
 
 ### Install
 ```bash
-npm install --save @weavedev/lit-i18next
+npm install --save @inventage/lit-i18next
 ```
 ### Initialization
 
 ```typescript
-import { i18next } from '@weavedev/lit-i18next';
+import { i18next } from '@inventage/lit-i18next';
 import { LitElement } from 'lit';
 
 class MyApp extends LitElment {
@@ -35,7 +35,7 @@ class MyApp extends LitElment {
 #### TypeScript (Decorator)
 
 ```typescript
-import { localized, t } from '@weavedev/lit-i18next';
+import { localized, t } from '@inventage/lit-i18next';
 import { LitElement, html, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
@@ -51,7 +51,7 @@ class MyElement extends LitElement {
 #### JavaScript
 
 ```javascript
-import { t, updateWhenLocaleChanges } from '@weavedev/lit-i18next';
+import { t, updateWhenLocaleChanges } from '@inventage/lit-i18next';
 import { LitElement, html } from 'lit';
 
 class MyElement extends LitElement {
