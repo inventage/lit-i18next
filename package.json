@@ -40,5 +40,8 @@
     "lit",
     "lit-element",
     "localization"
-  ]
+  ],
+  "engines": {
+    "node": ">18"
+  }
 }
