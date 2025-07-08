@@ -35,7 +35,7 @@ export default {
     esbuildPlugin({
       ts: true,
       target: 'auto',
-      tsconfig: './tsconfig.json',
+      tsconfig: './tsconfig.test.json',
     }),
   ],
   testRunnerHtml: testFramework => `

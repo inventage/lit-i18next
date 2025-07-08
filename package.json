@@ -5,6 +5,7 @@
   "license": "MIT",
   "author": "Weave B.V. (https://weave.nl)",
   "contributors": [
+    "Peter Siska <psiska@inventage.com>",
     "Quincy van Bommel <dev@aquiblo.com>"
   ],
   "homepage": "https://github.com/inventage/lit-i18next#readme",
@@ -21,7 +22,7 @@
     "/dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist && tsc --pretty",
     "format": "run-p -l format:* && pnpm --filter @uniport/frontend-app-example format",
     "format:prettier": "prettier \"**/*.{js,json,ts,md}\" --write",
     "format:prettier-package-json": "npx prettier-package-json --write package.json",
@@ -51,6 +52,7 @@
     "lit": "^3.3.0",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
     "typescript": "~5.8.3"
   },
   "keywords": [
