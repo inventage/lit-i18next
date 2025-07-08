@@ -31,7 +31,7 @@ export class LocalizeController implements ReactiveController {
 
   hostConnected() {
     for (const event of this.events) {
-      if (event == 'initialized' && i18next.isInitialized) continue;
+      if (event === 'initialized' && i18next.isInitialized) continue;
       i18next.on(event, this.localizeEventHandler);
     }
   }

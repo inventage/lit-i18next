@@ -1,16 +1,36 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "module": "es2020",
-    "target": "es2015",
-    "lib": ["es2020", "dom"],
+    "target": "es2022",
+    "module": "es2022",
+    "lib": ["es2022", "dom"],
     "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "strict": true
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["mocha"],
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "useDefineForClassFields": false,
+    "experimentalDecorators": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "test/**/*.ts"]
 }
