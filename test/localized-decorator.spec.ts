@@ -1,18 +1,12 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { LitElement } from 'lit';
-
-import { updateWhenLocaleChanges } from '../src/localized-controller';
 import { i18next, localized, t } from '../src/lit-i18next';
+import { initializeTranslations } from './utils';
 
 @localized()
 @customElement('test-element')
 class TestElement extends LitElement {
-  constructor() {
-    super();
-    updateWhenLocaleChanges(this);
-  }
-
   override render() {
     return html`${t('foo')}`;
   }
@@ -20,22 +14,7 @@ class TestElement extends LitElement {
 
 describe('@localized', () => {
   before(async () => {
-    await i18next.init({
-      lng: 'en',
-      debug: true,
-      resources: {
-        en: {
-          translation: {
-            foo: 'bar',
-          },
-        },
-        de: {
-          translation: {
-            foo: 'baz',
-          },
-        },
-      },
-    });
+    await initializeTranslations();
   });
 
   it('re-renders when language changes', async () => {

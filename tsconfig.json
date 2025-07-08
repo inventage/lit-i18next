@@ -8,7 +8,6 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./src",
     "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["mocha"],
@@ -30,7 +29,8 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "useDefineForClassFields": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*.ts", "test/**/*.ts"]
 }
