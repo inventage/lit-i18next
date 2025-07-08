@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/inventage/lit-i18next/issues"
   },
+  "type": "module",
   "main": "dist/lit-i18next.js",
   "files": [
     "/dist"
