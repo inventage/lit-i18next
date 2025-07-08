@@ -21,8 +21,7 @@
     "/dist"
   ],
   "scripts": {
-    "commit": "cz",
-    "prepare": "tsc"
+    "prepare": "husky"
   },
   "types": "dist/lit-i18next.d.ts",
   "peerDependencies": {
@@ -30,9 +29,11 @@
     "i18next": ">=19.5.0 < 23.0.0"
   },
   "devDependencies": {
-    "@lit/reactive-element": "^2.0.0",
-    "commitizen": "~4.3.1",
-    "typescript": "~5.3.3"
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@lit/reactive-element": "~2.1.0",
+    "husky": "^9.1.7",
+    "typescript": "~5.8.3"
   },
   "keywords": [
     "i18n",

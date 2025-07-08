@@ -1,6 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/@inventage%2Flit-i18next.svg)](https://www.npmjs.com/package/@inventage/lit-i18next)
 [![Downloads](http://img.shields.io/npm/dm/@inventage%2Flit-i18next.svg)](https://www.npmjs.com/package/@inventage/lit-i18next)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![License](https://img.shields.io/github/license/inventage/lit-i18next.svg)](https://github.com/inventage/lit-i18next/blob/master/LICENSE)
 
 # @inventage/lit-i18next
