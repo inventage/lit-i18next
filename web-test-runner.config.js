@@ -1,7 +1,13 @@
 import { playwrightLauncher } from '@web/test-runner-playwright';
 import { esbuildPlugin } from '@web/dev-server-esbuild';
+import { parseTsconfig } from 'get-tsconfig';
+import { fileURLToPath } from 'node:url';
+import { writeFileSync } from 'node:fs';
 
+const TS_CONFIG_PATH = fileURLToPath(new URL('./tsconfig.test.json', import.meta.url));
 const HIDDEN_WARNINGS = [/Lit is in dev mode/u];
+
+writeFileSync('tsconfig.test-parsed.json', JSON.stringify(parseTsconfig(TS_CONFIG_PATH), null, 2), { encoding: 'utf8' });
 
 const filterBrowserLogs = log => {
   const [message] = log.args;
@@ -35,7 +41,7 @@ export default {
     esbuildPlugin({
       ts: true,
       target: 'auto',
-      tsconfig: './tsconfig.test.json',
+      tsconfig: './tsconfig.test-parsed.json',
     }),
   ],
   testRunnerHtml: testFramework => `
