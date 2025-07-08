@@ -11,36 +11,36 @@ import { default as i18next } from 'i18next';
 type Event = 'added' | 'initialized' | 'languageChanged' | 'loaded';
 
 export type LocalizeOptions = {
-    event?: Event | Event[];
-}
+  event?: Event | Event[];
+};
 
 export class LocalizeController implements ReactiveController {
-    public static readonly events: ReadonlyArray<Event> = ['languageChanged'];
+  public static readonly events: ReadonlyArray<Event> = ['languageChanged'];
 
-    public readonly host: ReactiveControllerHost;
+  public readonly host: ReactiveControllerHost;
 
-    private readonly events: ReadonlyArray<Event>;
-    private readonly localizeEventHandler = () => this.host.requestUpdate();
+  private readonly events: ReadonlyArray<Event>;
+  private readonly localizeEventHandler = () => this.host.requestUpdate();
 
-    constructor(host: ReactiveControllerHost, options?: LocalizeOptions) {
-        this.host = host;
+  constructor(host: ReactiveControllerHost, options?: LocalizeOptions) {
+    this.host = host;
 
-        const events = options?.event !== undefined ? options.event : LocalizeController.events;
-        this.events = typeof events === 'string' ? [events] : events;
+    const events = options?.event !== undefined ? options.event : LocalizeController.events;
+    this.events = typeof events === 'string' ? [events] : events;
+  }
+
+  hostConnected() {
+    for (const event of this.events) {
+      if (event == 'initialized' && i18next.isInitialized) continue;
+      i18next.on(event, this.localizeEventHandler);
     }
+  }
 
-    hostConnected() {
-        for (const event of this.events) {
-            if (event == 'initialized' && i18next.isInitialized) continue;
-            i18next.on(event, this.localizeEventHandler);
-        }
+  hostDisconnected() {
+    for (const event of this.events) {
+      i18next.off(event, this.localizeEventHandler);
     }
-
-    hostDisconnected() {
-        for (const event of this.events) {
-            i18next.off(event, this.localizeEventHandler);
-        }
-    }
+  }
 }
 
 /**
@@ -63,5 +63,4 @@ export class LocalizeController implements ReactiveController {
  *   }
  * }
  */
-export const updateWhenLocaleChanges = (host: ReactiveControllerHost, options?: LocalizeOptions) =>
-    host.addController(new LocalizeController(host, options));
+export const updateWhenLocaleChanges = (host: ReactiveControllerHost, options?: LocalizeOptions) => host.addController(new LocalizeController(host, options));

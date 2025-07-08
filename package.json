@@ -21,6 +21,11 @@
     "/dist"
   ],
   "scripts": {
+    "format": "run-p -l format:* && pnpm --filter @uniport/frontend-app-example format",
+    "format:prettier": "prettier \"**/*.{js,json,ts,md}\" --write",
+    "format:prettier-package-json": "npx prettier-package-json --write package.json",
+    "lint": "run-p -l lint:*",
+    "lint:prettier": "prettier \"**/*.{js,json,ts,md}\" --check",
     "prepare": "husky"
   },
   "types": "dist/lit-i18next.d.ts",
@@ -33,6 +38,9 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@lit/reactive-element": "~2.1.0",
     "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "npm-run-all2": "^8.0.4",
+    "prettier": "^3.6.2",
     "typescript": "~5.8.3"
   },
   "keywords": [
@@ -42,5 +50,13 @@
     "lit",
     "lit-element",
     "localization"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,json,ts,md}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "npx prettier-package-json --write"
+    ]
+  }
 }

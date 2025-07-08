@@ -11,20 +11,20 @@ import { LocalizeOptions, updateWhenLocaleChanges } from './localized-controller
 
 // From the TC39 Decorators proposal
 interface ClassDescriptor {
-    kind: 'class';
-    elements: ClassElement[];
-    finisher?: <T>(clazz: Constructor<T>) => void | Constructor<T>;
+  kind: 'class';
+  elements: ClassElement[];
+  finisher?: <T>(clazz: Constructor<T>) => void | Constructor<T>;
 }
 
 // From the TC39 Decorators proposal
 interface ClassElement {
-    kind: 'field' | 'method';
-    key: PropertyKey;
-    placement: 'static' | 'prototype' | 'own';
-    initializer?: Function;
-    extras?: ClassElement[];
-    finisher?: <T>(clazz: Constructor<T>) => void | Constructor<T>;
-    descriptor?: PropertyDescriptor;
+  kind: 'field' | 'method';
+  key: PropertyKey;
+  placement: 'static' | 'prototype' | 'own';
+  initializer?: Function;
+  extras?: ClassElement[];
+  finisher?: <T>(clazz: Constructor<T>) => void | Constructor<T>;
+  descriptor?: PropertyDescriptor;
 }
 
 /**
@@ -48,25 +48,21 @@ interface ClassElement {
  * }
  * ```
  */
-export const localized =
-    (options?: LocalizeOptions) =>
-    (classOrDescriptor: typeof ReactiveElement | ClassDescriptor) =>
-        typeof classOrDescriptor === 'function'
-            ? legacyLocalized(classOrDescriptor, options)
-            : standardLocalized(classOrDescriptor, options);
+export const localized = (options?: LocalizeOptions) => (classOrDescriptor: typeof ReactiveElement | ClassDescriptor) =>
+  typeof classOrDescriptor === 'function' ? legacyLocalized(classOrDescriptor, options) : standardLocalized(classOrDescriptor, options);
 
-const standardLocalized = ({kind, elements}: ClassDescriptor, options?: LocalizeOptions) => {
-    return {
-        kind,
-        elements,
-        finisher(clazz: typeof ReactiveElement) {
-            clazz.addInitializer(host => updateWhenLocaleChanges(host, options));
-        },
-    };
+const standardLocalized = ({ kind, elements }: ClassDescriptor, options?: LocalizeOptions) => {
+  return {
+    kind,
+    elements,
+    finisher(clazz: typeof ReactiveElement) {
+      clazz.addInitializer(host => updateWhenLocaleChanges(host, options));
+    },
+  };
 };
 
-const legacyLocalized = (clazz: typeof ReactiveElement, options ?: LocalizeOptions) => {
-    clazz.addInitializer(host => updateWhenLocaleChanges(host, options));
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return clazz as any;
+const legacyLocalized = (clazz: typeof ReactiveElement, options?: LocalizeOptions) => {
+  clazz.addInitializer(host => updateWhenLocaleChanges(host, options));
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return clazz as any;
 };

@@ -7,9 +7,11 @@
 ## Usage
 
 ### Install
+
 ```bash
 npm install --save @inventage/lit-i18next
 ```
+
 ### Initialization
 
 ```typescript
@@ -18,7 +20,7 @@ import { LitElement } from 'lit';
 
 class MyApp extends LitElment {
   i18nInit = i18next.init({
-     ...options
+    ...options,
   });
 
   protected async performUpdate(): Promise<unknown> {
@@ -39,7 +41,7 @@ import { LitElement, html, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
 @customElement('my-element')
-@localized({...options})
+@localized({ ...options })
 class MyElement extends LitElement {
   protected render(): TemplateResult {
     return html`<b>${t('path.to.translation_key')}</b>`;
@@ -57,7 +59,7 @@ class MyElement extends LitElement {
   constructor() {
     super();
     updateWhenLocaleChanges(this, {
-        ...options
+      ...options,
     });
   }
 
@@ -69,14 +71,15 @@ customElements.define('my-element', MyElement);
 ```
 
 #### Options
+
 Options can be passed optionally to the `localized` decorator or the `updateWhenLocaleChanges` callback.
+
 ```ts
 type Event = 'added' | 'initialized' | 'languageChanged' | 'loaded';
 type LocalizeOptions = {
-    event?: Event | Event[]; // Event or events which will trigger a rerender
+  event?: Event | Event[]; // Event or events which will trigger a rerender
 };
 ```
-
 
 ## License
 
