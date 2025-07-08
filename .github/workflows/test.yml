@@ -1,0 +1,35 @@
+name: Test
+
+on:
+  workflow_call:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install packages
+        run: npm ci
+
+      # Disable man-db triggers
+      # @see https://github.com/actions/runner-images/issues/10977#issuecomment-2681219742
+      - name: Setup Playwright
+        run: |
+          echo 'set man-db/auto-update false' | sudo debconf-communicate >/dev/null
+          sudo dpkg-reconfigure man-db
+          npx playwright install --only-shell --with-deps chromium
+
+      - name: Run Tests
+        run: npx playwright install-deps && npm test
+
+
+
