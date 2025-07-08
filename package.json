@@ -1,6 +1,6 @@
 {
   "name": "@inventage/lit-i18next",
-  "version": "2.0.0-rc.1",
+  "version": "3.0.0-rc.1",
   "description": "i18next implementation for Lit",
   "license": "MIT",
   "author": "Weave B.V. (https://weave.nl)",
@@ -25,8 +25,8 @@
   },
   "types": "dist/lit-i18next.d.ts",
   "peerDependencies": {
-    "@lit/reactive-element": "^1.0.0 || ^2.0.0",
-    "i18next": ">=19.5.0 < 23.0.0"
+    "@lit/reactive-element": "^2",
+    "i18next": "^23 || ^24 || ^25"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
