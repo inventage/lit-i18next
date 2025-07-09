@@ -38,7 +38,7 @@
   "types": "dist/lit-i18next.d.ts",
   "peerDependencies": {
     "@lit/reactive-element": "^2",
-    "i18next": "^23 || ^24 || ^25"
+    "i18next": ">=23.0.0 <26.0.0"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.1",
@@ -54,6 +54,7 @@
     "@web/test-runner-playwright": "^0.11.1",
     "get-tsconfig": "^4.10.1",
     "husky": "^9.1.7",
+    "i18next": "^25.3.2",
     "is-ci": "^4.1.0",
     "lint-staged": "^16.1.2",
     "lit": "^3.3.0",
