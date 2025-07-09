@@ -27,10 +27,11 @@ jobs:
         run: |
           echo 'set man-db/auto-update false' | sudo debconf-communicate >/dev/null
           sudo dpkg-reconfigure man-db
-          npx playwright install --only-shell --with-deps chromium
+          npx playwright install --only-shell chromium
 
       - name: Run Tests
-        run: npx playwright install-deps && npm test
+#        run: npx playwright install-deps && npm test
+        run: npm test
 
 
 
