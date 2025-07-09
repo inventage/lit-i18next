@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@inventage/lit-i18next": "3.0.0-rc.1"
+  },
+  "changesets": []
+}
