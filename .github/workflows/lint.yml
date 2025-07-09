@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: ./actions/setup-node-and-dependencies
+      - uses: ./.github/actions/setup-node-and-dependencies
 
       - name: Codestyle checks
         run: npm run lint

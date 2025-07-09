@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: ./actions/setup-node-and-dependencies
+      - uses: ./.github/actions/setup-node-and-dependencies
 
       - name: Install i18next version ${{ matrix.i18next_version }}
         run: npm i -D i18next@${{ matrix.i18next_version }}
