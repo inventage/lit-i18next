@@ -29,7 +29,7 @@
     "lint": "run-p -l lint:*",
     "lint:prettier": "prettier \"**/*.{js,json,ts,md}\" --check",
     "lint:types": "tsc --pretty --noEmit",
-    "prepare": "husky",
+    "prepare": "is-ci || husky",
     "release": "is-ci && changeset publish",
     "test": "wtr",
     "test:watch": "wtr --config web-test-runner.watch.config.js",
