@@ -27,7 +27,7 @@ jobs:
 
   release:
     name: Release (main)
-    needs: [build, test]
+    needs: [lint, build, test]
     uses: ./.github/workflows/release.yml
     secrets: inherit
 
