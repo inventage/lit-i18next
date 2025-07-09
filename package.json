@@ -28,6 +28,7 @@
     "format:prettier-package-json": "npx prettier-package-json --write package.json",
     "lint": "run-p -l lint:*",
     "lint:prettier": "prettier \"**/*.{js,json,ts,md}\" --check",
+    "lint:types": "tsc --pretty --noEmit",
     "prepare": "husky",
     "release": "is-ci && changeset publish",
     "test": "wtr",

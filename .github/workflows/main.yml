@@ -13,6 +13,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    name: Lint (main)
+    uses: ./.github/workflows/lint.yml
+
   build:
     name: Build (main)
     uses: ./.github/workflows/build.yml
