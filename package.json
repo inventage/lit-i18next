@@ -29,8 +29,10 @@
     "lint": "run-p -l lint:*",
     "lint:prettier": "prettier \"**/*.{js,json,ts,md}\" --check",
     "prepare": "husky",
+    "release": "is-ci && changeset publish",
     "test": "wtr",
-    "test:watch": "wtr --config web-test-runner.watch.config.js"
+    "test:watch": "wtr --config web-test-runner.watch.config.js",
+    "version": "is-ci && sh scripts/version.sh"
   },
   "types": "dist/lit-i18next.d.ts",
   "peerDependencies": {
@@ -51,6 +53,7 @@
     "@web/test-runner-playwright": "^0.11.1",
     "get-tsconfig": "^4.10.1",
     "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
     "lint-staged": "^16.1.2",
     "lit": "^3.3.0",
     "npm-run-all2": "^8.0.4",

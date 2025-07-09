@@ -20,3 +20,10 @@ jobs:
   test:
     name: Test (main)
     uses: ./.github/workflows/test.yml
+
+  release:
+    name: Release (main)
+    needs: [build, test]
+    uses: ./.github/workflows/release.yml
+    secrets: inherit
+
