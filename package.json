@@ -17,6 +17,12 @@
     "url": "https://github.com/inventage/lit-i18next/issues"
   },
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/lit-i18next.d.ts",
+      "default": "./dist/lit-i18next.js"
+    }
+  },
   "main": "dist/lit-i18next.js",
   "files": [
     "/dist"
