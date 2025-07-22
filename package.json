@@ -22,7 +22,8 @@
     "/dist"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc --pretty",
+    "build": "npm run clean && tsc --pretty",
+    "clean": "rimraf dist",
     "format": "run-p -l format:* && pnpm --filter @uniport/frontend-app-example format",
     "format:prettier": "prettier \"**/*.{js,json,ts,md}\" --write",
     "format:prettier-package-json": "npx prettier-package-json --write package.json",
