@@ -21,8 +21,6 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - uses: ./.github/actions/setup-node-and-dependencies
-
       - name: Create .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
@@ -30,6 +28,11 @@ jobs:
           EOF
         env:
           NPM_TOKEN: ${{ secrets.NPM_INVENTAGE_ORG_PUBLISH }}
+
+      - uses: ./.github/actions/setup-node-and-dependencies
+
+      - name: Run Build
+        run: npm run build
 
       - name: Create Release PR or publish to NPM
         uses: changesets/action@v1
