@@ -1,5 +1,11 @@
 # @inventage/lit-i18next
 
+## 3.0.2
+
+### Patch Changes
+
+- [`a2085ae`](https://github.com/inventage/lit-i18next/commit/a2085aea4defac186b6ae45499f66a60a798e56a) Thanks [@peschee](https://github.com/peschee)! - Fix exports to the code `import { i18next } from '@inventage/lit-i18next'` works as expected
+
 ## 3.0.1
 
 ### Patch Changes
