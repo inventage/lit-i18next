@@ -30,8 +30,4 @@ jobs:
           npx playwright install --only-shell chromium
 
       - name: Run Tests
-#        run: npx playwright install-deps && npm test
         run: npm test
-
-
-

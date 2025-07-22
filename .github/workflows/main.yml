@@ -30,4 +30,3 @@ jobs:
     needs: [lint, build, test]
     uses: ./.github/workflows/release.yml
     secrets: inherit
-

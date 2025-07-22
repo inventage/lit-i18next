@@ -17,6 +17,3 @@ jobs:
 
       - name: Codestyle checks
         run: npm run lint
-
-
-
