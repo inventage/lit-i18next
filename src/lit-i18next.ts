@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: MIT License
  */
 
-export * from './localized-decorator';
-export * from './localized-controller';
-export * from './localized-helpers';
+export { localized } from './localized-decorator';
+export { LocalizeController, updateWhenLocaleChanges } from './localized-controller';
+export type { LocalizeOptions } from './localized-controller';
+export { t, i18next } from './localized-helpers';
