@@ -1,6 +1,6 @@
 {
   "name": "@inventage/lit-i18next",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "description": "i18next implementation for Lit",
   "license": "MIT",
   "author": "Weave B.V. (https://weave.nl)",

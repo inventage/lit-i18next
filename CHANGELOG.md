@@ -1,5 +1,30 @@
 # @inventage/lit-i18next
 
+## 4.0.0
+
+### Major Changes
+
+- [`4a45615`](https://github.com/inventage/lit-i18next/commit/4a45615ea0b44cb830319c9139247424c799738b) Thanks [@peschee](https://github.com/peschee)! - **BREAKING**: The barrel export has been removed. Update all imports to use direct paths with `.js` extensions:
+
+  ## Before
+
+  ```typescript
+  import { localized, t, i18next } from '@inventage/lit-i18next';
+  ```
+
+  ## After
+
+  ```typescript
+  import { localized } from '@inventage/lit-i18next/localized-decorator.js';
+  import { t, i18next } from '@inventage/lit-i18next/localized-helpers.js';
+  import { updateWhenLocaleChanges } from '@inventage/lit-i18next/localized-controller.js';
+  ```
+
+  All exports are now in their respective files:
+  - `localized` → `localized-decorator.js`
+  - `t`, `i18next` → `localized-helpers.js`
+  - `updateWhenLocaleChanges`, `LocalizeController`, `LocalizeOptions` → `localized-controller.js`
+
 ## 3.0.3
 
 ### Patch Changes
