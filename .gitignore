@@ -4,3 +4,5 @@ node_modules/
 coverage/
 *.tsbuildinfo
 tsconfig.test-parsed.json
+.mcp.json
+.claude/settings.local.json
