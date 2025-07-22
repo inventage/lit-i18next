@@ -1,5 +1,11 @@
 # @inventage/lit-i18next
 
+## 3.0.3
+
+### Patch Changes
+
+- [`c90c1aa`](https://github.com/inventage/lit-i18next/commit/c90c1aa573eb2e023c20c356284cdbf835c61ca4) Thanks [@peschee](https://github.com/peschee)! - Fix module exports
+
 ## 3.0.2
 
 ### Patch Changes
