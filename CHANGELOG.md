@@ -1,5 +1,11 @@
 # @inventage/lit-i18next
 
+## 3.0.1
+
+### Patch Changes
+
+- [`dd15fdc`](https://github.com/inventage/lit-i18next/commit/dd15fdc0e47f8eadf96e38f12e4e7c3b8e47e928) Thanks [@peschee](https://github.com/peschee)! - Release pipeline fix to add missing dist files
+
 ## 3.0.0
 
 ### Patch Changes
