@@ -15,7 +15,7 @@ npm install --save @inventage/lit-i18next
 ### Initialization
 
 ```typescript
-import { i18next } from '@inventage/lit-i18next';
+import { i18next } from '@inventage/lit-i18next/localized-helpers.js';
 import { LitElement } from 'lit';
 
 class MyApp extends LitElment {
@@ -36,7 +36,8 @@ class MyApp extends LitElment {
 #### TypeScript (Decorator)
 
 ```typescript
-import { localized, t } from '@inventage/lit-i18next';
+import { localized } from '@inventage/lit-i18next/localized-decorator.js';
+import { t } from '@inventage/lit-i18next/localized-helpers.js';
 import { LitElement, html, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
@@ -52,7 +53,8 @@ class MyElement extends LitElement {
 #### JavaScript
 
 ```javascript
-import { t, updateWhenLocaleChanges } from '@inventage/lit-i18next';
+import { t } from '@inventage/lit-i18next/localized-helpers.js';
+import { updateWhenLocaleChanges } from '@inventage/lit-i18next/localized-controller.js';
 import { LitElement, html } from 'lit';
 
 class MyElement extends LitElement {

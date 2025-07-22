@@ -50,7 +50,8 @@ export class LocalizeController implements ReactiveController {
  *
  * ```js
  * import { LitElement, html } from 'lit';
- * import { t, updateWhenLocaleChanges } from '@inventage/lit-i18next';
+ * import { t } from '@inventage/lit-i18next/localized-helpers.js';
+ * import { updateWhenLocaleChanges } from '@inventage/lit-i18next/localized-controller.js';
  *
  * class MyElement extends LitElement {
  *   constructor() {

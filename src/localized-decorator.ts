@@ -6,8 +6,8 @@
  */
 
 import type { ReactiveElement } from '@lit/reactive-element';
-import type { Constructor } from '@lit/reactive-element/decorators/base';
-import { LocalizeOptions, updateWhenLocaleChanges } from './localized-controller';
+import type { Constructor } from '@lit/reactive-element/decorators/base.js';
+import { LocalizeOptions, updateWhenLocaleChanges } from './localized-controller.js';
 
 // From the TC39 Decorators proposal
 interface ClassDescriptor {
@@ -37,7 +37,8 @@ interface ClassElement {
  * ```ts
  * import { LitElement, html } from 'lit';
  * import { customElement } from 'lit/decorators.js';
- * import { localized, t } from '@inventage/lit-i18next';
+ * import { localized } from '@inventage/lit-i18next/localized-decorator.js';
+ * import { t } from '@inventage/lit-i18next/localized-helpers.js';
  *
  * @localized()
  * @customElement('my-element')

@@ -1,4 +1,4 @@
-import { i18next } from '../src/localized-helpers';
+import { i18next } from '../src/localized-helpers.js';
 
 export const initializeTranslations = () =>
   i18next.init({

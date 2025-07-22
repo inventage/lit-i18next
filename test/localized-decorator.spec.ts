@@ -1,8 +1,10 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { LitElement } from 'lit';
-import { i18next, localized, t } from '../src/lit-i18next';
-import { initializeTranslations } from './utils';
+
+import { localized } from '../src/localized-decorator.js';
+import { i18next, t } from '../src/localized-helpers.js';
+import { initializeTranslations } from './utils.js';
 
 @localized()
 @customElement('test-element')

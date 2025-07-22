@@ -18,12 +18,19 @@
   },
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/lit-i18next.d.ts",
-      "default": "./dist/lit-i18next.js"
+    "./localized-decorator.js": {
+      "types": "./dist/localized-decorator.d.ts",
+      "default": "./dist/localized-decorator.js"
+    },
+    "./localized-controller.js": {
+      "types": "./dist/localized-controller.d.ts",
+      "default": "./dist/localized-controller.js"
+    },
+    "./localized-helpers.js": {
+      "types": "./dist/localized-helpers.d.ts",
+      "default": "./dist/localized-helpers.js"
     }
   },
-  "main": "dist/lit-i18next.js",
   "files": [
     "/dist"
   ],
@@ -42,7 +49,6 @@
     "test:watch": "wtr --config web-test-runner.watch.config.js",
     "version": "is-ci && sh scripts/version.sh"
   },
-  "types": "dist/lit-i18next.d.ts",
   "peerDependencies": {
     "@lit/reactive-element": "^2",
     "i18next": ">=23.0.0 <26.0.0"

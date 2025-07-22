@@ -1,8 +1,10 @@
 import { expect, fixture, html } from '@open-wc/testing';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { LitElement } from 'lit';
-import { i18next, t, updateWhenLocaleChanges } from '../src/lit-i18next';
-import { initializeTranslations } from './utils';
+
+import { updateWhenLocaleChanges } from '../src/localized-controller.js';
+import { i18next, t } from '../src/localized-helpers.js';
+import { initializeTranslations } from './utils.js';
 
 @customElement('test-element')
 class TestElement extends LitElement {
